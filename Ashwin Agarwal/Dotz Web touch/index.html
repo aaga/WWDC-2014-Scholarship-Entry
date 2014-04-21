@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+            <meta name="viewport" content="width = device-width,user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+			<title>Dotz</title>
+			<link rel="stylesheet" href="style.css" />
+
+		</head>
+
+		<body>
+			<script src="jquery.min.js"></script>
+			<script src="json2.js"></script>
+			<script src="underscore-min.js"></script>
+			<script src="backbone-min.js"></script>
+			<script src="raphael-min.js"></script>
+			<script src="scale.raphael.js"></script>
+
+			<div class="container">
+
+			</div>
+
+			<script type="text/template" id="menu-template">
+				<p id="high-score">High Score: <%= localStorage["dotz.high.score"] ? localStorage["dotz.high.score"]: 0 %></p>
+				<div class="menu">
+					<p id="play">Tap anywhere to play</p>
+					</br>
+					<p id="instructions">How to play: Tap on the left if there are 3 dots and on the right if there are 4</p>
+				</div>
+			</script>
+
+			<script type="text/template" id="game-template">
+				<div id="timer"></div>
+				<div class="game">
+					<p id="score">Score: <%= gameData.get('score') %></p>
+					<p id="high-score">High Score: <%= localStorage["dotz.high.score"] ? localStorage["dotz.high.score"]: 0 %></p>
+					<div id="wrap">
+					</div>
+				</div>
+			</script>
+
+			<script type="text/template" id="game-over-template">
+				<p id="high-score">High Score: <%= localStorage["dotz.high.score"] ? localStorage["dotz.high.score"]: 0 %></p>
+				<div class="game-over">
+					<p id="game-over-text">Game Over</p>
+					</br>
+					<p id="final-score">Score: <%= gameData.get('score') %></p>
+					</br>
+					<p id="retry">Tap anywhere to retry</p>
+					</br>
+					<p id="instructions">How to play: Tap on the left if there are 3 dots and on the right if there are 4</p>
+				</div>
+			</script>
+
+			<script src="dotz.js"></script>	
+
+		</body>
+
+	</html>
